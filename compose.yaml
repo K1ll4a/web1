@@ -1,0 +1,16 @@
+services:
+  java-src:
+    build:
+      context: ./src
+      dockerfile: ../srcDockerfile
+    container_name: java-src
+    restart: unless-stopped
+    init: true
+    # env_file: ./src/.env  # Uncomment if .env file exists
+    # No ports exposed since none are specified in Dockerfile or documentation
+    # Add ports: if your application listens on a port (e.g., 8080:8080)
+    # networks: [appnet]  # Uncomment if you add more services that need to communicate
+
+# No external services (databases, caches, etc.) detected in the project structure or source files.
+# No volumes section included as there are no persistent data requirements.
+# No networks section included as there is only one service and no inter-service communication is needed.
